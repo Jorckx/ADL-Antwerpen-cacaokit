@@ -1,0 +1,25 @@
+html {
+  overflow-y: scroll;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid {
+  --columns: 12;
+  --gutter: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid > .column {
+    grid-column: span var(--columns);
+  }
+}
